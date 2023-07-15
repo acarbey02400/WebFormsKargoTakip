@@ -21,6 +21,7 @@ namespace WebFormsKargoTakip
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ServiceCollection services = new ServiceCollection();
             services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<ICargoRepository, CargoRepository>();
             WebFormsKargoTakip.DependencyInjection.ServiceProvider provider = 
                 new WebFormsKargoTakip.DependencyInjection.ServiceProvider(services.BuildServiceProvider());
             HttpRuntime.WebObjectActivator = provider;

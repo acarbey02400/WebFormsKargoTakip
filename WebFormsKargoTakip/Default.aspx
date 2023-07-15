@@ -1,46 +1,33 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebFormsKargoTakip._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebFormsKargoTakip._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
 
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                    <asp:GridView ID="GridView1" runat="server" Width="322px">
-                    </asp:GridView>
-                </p>
-            </section>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Giriş Ekranı</title>
+</head>
+<body>
+    <form runat="server" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+        <div style="text-align: center;">
+            <div style="margin-bottom: 10px;">
+                <label for="txtUsername">Kullanıcı Adı:</label>
+                <br />
+                <input type="text" id="txtUsername" runat="server" />
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label for="txtPassword">Şifre:</label>
+                <br />
+                <input type="password" id="txtPassword" runat="server" />
+            </div>
+
+            <asp:Button ID="btnLogin" runat="server" Text="Giriş Yap" OnClick="btnLogin_Click" />
+
+            <br />
+
+            <asp:Label ID="lblErrorMessage" runat="server" CssClass="error-message"></asp:Label>
         </div>
-    </main>
-
-</asp:Content>
+    </form>
+</body>
+</html>
